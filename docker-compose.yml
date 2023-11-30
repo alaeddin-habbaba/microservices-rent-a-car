@@ -13,12 +13,13 @@ services:
       - backend
 
   api-gateway:
-    build: ./api-gateway
+    image: alaeddinhb/api-gateway
+    mem_limit: 700m
     ports:
-      - "9999:9999"
+      - "8181:8181"
     environment:
-      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka
-      - spring.security.oauth2.resourceserver.jwt.issuer-uri = http://localhost:8080/realms/microservices-rent-a-car
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+      - spring.security.oauth2.resource-server.jwt.issuer-uri=http://localhost:8080/realms/microservices-rent-a-car
     depends_on:
       - discovery-server
 

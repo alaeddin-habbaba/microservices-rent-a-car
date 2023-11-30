@@ -9,6 +9,7 @@ import com.turkcell.carservice.business.dtos.responses.car.GetCarResponse;
 import com.turkcell.carservice.business.dtos.responses.car.UpdateCarResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +17,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/api/cars")
 public class CarsController {
     private final CarService carService;
